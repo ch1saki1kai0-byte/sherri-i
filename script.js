@@ -179,6 +179,14 @@ function selectMusicCategory(category) {
     return;
   }
 
+  if (selectedPlaylist === activePlaylist) {
+    categoryNote.textContent = '';
+    document.querySelectorAll('.category-tab').forEach((tab) => {
+      tab.classList.toggle('active', tab.dataset.category === category);
+    });
+    return;
+  }
+
   const wasPlaying = !audio.paused;
   activePlaylist = selectedPlaylist;
   currentIndex = 0;

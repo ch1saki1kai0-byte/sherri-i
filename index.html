@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>para kay sherri pretty</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+        href="https://fonts.googleapis.com/css2?family=Aldrich&family=Pixelify+Sans:wght@400..700&display=swap"
+        rel="stylesheet"
+    />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div id="intro-screen">
+    <button id="envelope-button" type="button">
+      <img src="imgs/envelope.png" alt="Envelope" id="envelope-image">
+    </button>
+    <p id="intro-text">galing sa laloves mo :> <br>- tap the envelope to open -</p>
+  </div>
+
+  <div id="main-container" class="hidden">
+    <main id="main-window">
+      <h1 id="title-text">Hi love hehhehe </h1>
+      <nav id="section-tabs" aria-label="Gift sections">
+        <button class="section-tab active" type="button" data-section="music-section">Music</button>
+        <button class="section-tab" type="button" data-section="letter-section">Letter</button>
+        <button class="section-tab" type="button" data-section="birthday-section">Birthday Greetings heh</button>
+        <button class="section-tab" type="button" data-section="photos-section">Pictures (soon)</button>
+      </nav>
+
+      <section id="music-section" class="page-section">
+        <h2>music trip ka muna? ^^</h2>
+        <div class="music-category" role="group" aria-label="Music category">
+          <button class="category-tab active" type="button" data-category="favorites">Songs</button>
+          <button class="category-tab" type="button" data-category="recordings">Recorded Songs!? :D</button>
+        </div>
+        <p id="category-note" class="section-note" aria-live="polite"></p>
+        <div id="card-content">
+          <div id="imagearea">
+            <img src="imgs/img-place.png" alt="Album art" id="image-holder">
+          </div>
+          <p id="song-artist">song - artist</p>
+        </div>
+        <div id="progress-area">
+          <input type="range" id="progress" min="0" max="100" value="0" aria-label="Song progress">
+        </div>
+        <div id="buttons">
+          <img src="imgs/btn-loop.png" alt="Loop" id="btn-loop" role="button" tabindex="0">
+          <img src="imgs/btn-back.png" alt="Previous" id="btn-prev" role="button" tabindex="0">
+          <img src="imgs/btn-play.png" alt="Play" id="btn-play" role="button" tabindex="0">
+          <img src="imgs/btn-next.png" alt="Next" id="btn-next" role="button" tabindex="0">
+          <img src="imgs/btn-volume.png" alt="Volume" id="btn-vol" role="button" tabindex="0">
+        </div>
+        <div id="volume-control" class="hidden">
+          <button id="vol-down" type="button" aria-label="Decrease volume">-</button>
+          <input type="range" id="volume-range" min="0" max="1" step="0.01" value="0.8" aria-label="Volume">
+          <button id="vol-up" type="button" aria-label="Increase volume">+</button>
+        </div>
+        <audio id="audio-player" preload="metadata"></audio>
+      </section>
+
+      <section id="letter-section" class="page-section hidden">
+        <h2>A letter for my everything</h2>
+        <p class="section-note">mwhehe love I love you</p>
+        <div id="letter-reveal">
+          <button id="letter-toggle" class="letter-envelope" type="button" aria-expanded="false" aria-controls="letter-content">
+            <span class="envelope-art" aria-hidden="true">
+              <span class="envelope-flap"></span>
+              <span class="envelope-heart">♥</span>
+            </span>
+            <span class="envelope-prompt">Open your letter</span>
+          </button>
+          <article id="letter-content" class="letter-paper hidden">
+            <p>To my laloves,</p>
+            <p>Happy birthday! my love sana maenjoy mo ang special day mo. I'm very thankful na to this day pinanganak ang laloves ko na makakasama ko habang buhay. I wish you na sana 
+              tumibay pa ang katwan mo at maging healthy para sa mga tinatahak mo sa buhay love. of course aalagaan rin kita love soon ^^ babalatan kita ng shrimp susubuan narin?! pagluluto ng sinigang !???!!  andito lang ako love susuport ka sa bawat desisyon mo sa buhay love sa 
+              bawat achievements bawat lowest mo andito ako always for you. wag mo kalimutan yon love love andito na ako heheh.  mahal na mahal kita eh diba ako nga unang nagsend?😏😎 HAHAHAHHA
+              Ano man plan mo today love love balitaan mo ako after mo mabasa eto HAHAHA parnag miss mo maghorror roblox kahit di ka takot? minecraft hmmm HAHAHHA kahit ano pa yan love ehheheh I love you so much love at love malapit na december! makakalabas na tayo ng wala iniisipp. sunrise on the reaping?? oooh hehehe 
+              tas love kain tayo kung ano man crinacrave natin heheh. pero yun muna love hehehe I love you so muchh love sending virtual kisses and hugs muna :333 soon na yung tunay lover. sana maenjoy mo itong munting upgrade?? ko sa system natin na ginawa ko HAHAHAH 
+            </p>
+            <p>With all my love,<br>Your laloves:  </p>
+            <button id="letter-close" class="letter-close" type="button">Fold letter away</button>
+          </article>
+        </div>
+      </section>
+
+      <section id="birthday-section" class="page-section hidden">
+        <h2>Happy birthday!</h2>
+        <div class="birthday-video">
+          <video id="birthday-video" controls preload="metadata" class="hidden">
+            <source src="lv_0_20261028155017.mp4" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+          <p id="video-placeholder" class="media-placeholder">Your birthday video is getting ready to load...</p>
+        </div>
+      </section>
+
+      <section id="photos-section" class="page-section hidden">
+        <h2>PICTUREWS!!! (soon) ^^</h2>
+        <div class="photo-area">
+          <p id="photo-placeholder" class="media-placeholder">Our pictures will be here soon. ♡</p>
+          <div id="photo-gallery" class="photo-gallery"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+  </body>
+  </html>
